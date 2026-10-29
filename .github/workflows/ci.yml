@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.11 is the oldest NVDA version the add-on supports; 3.13 is what
+        # NVDA 2026.x runs.
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run the test suite
+        run: python -m unittest discover -s tests -t . -v
+
+      - name: Build the add-on
+        run: python build.py
+
+      - name: Check the archive
+        run: python tools/verify_archive.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nvda-addon-py${{ matrix.python-version }}
+          path: dist/*.nvda-addon
+          if-no-files-found: error

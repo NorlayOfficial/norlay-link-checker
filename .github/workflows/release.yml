@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Tag and buildVars.py agree
+        run: |
+          version=$(python -c "import buildVars; print(buildVars.addon_info['addon_version'])")
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match buildVars.py version $version." >&2
+            exit 1
+          fi
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Run the test suite
+        run: python -m unittest discover -s tests -t . -v
+
+      - name: Build the add-on
+        run: python build.py
+
+      - name: Check the archive
+        run: python tools/verify_archive.py
+
+      - name: Stage release assets
+        run: |
+          mkdir -p release
+          stem="norlayLinkChecker-$VERSION"
+          cp "dist/$stem.nvda-addon" "release/$stem.nvda-addon"
+          cp "dist/$stem.zip" "release/$stem.zip"
+          # Stable names, so a link to /releases/latest/download/never goes stale.
+          cp "dist/$stem.nvda-addon" "release/norlayLinkChecker.nvda-addon"
+          cp "dist/$stem.zip" "release/norlayLinkChecker.zip"
+          cd release
+          sha256sum ./*.nvda-addon ./*.zip > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Write the release notes
+        run: python tools/release_notes.py "$VERSION" > release-notes.md
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "Norlay Link Checker $VERSION" \
+            --notes-file release-notes.md \
+            --latest \
+            release/*

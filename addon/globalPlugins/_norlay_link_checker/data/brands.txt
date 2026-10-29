@@ -1,0 +1,98 @@
+# Norlay Link Checker brand list
+#
+# Format: token|official-domain|display-name|confidence
+#
+# "token" is matched only against whole hyphen-separated parts of a label,
+# so "paypal" matches "paypal-login.example" but not "paypalbees".
+# "confidence" is "high" (warning) or "low" (note, for brand names that are
+# also ordinary English words).
+#
+# This is a deliberately small, auditable list. It is not a reputation
+# service and it does not prove that anything is impersonation.
+
+paypal|paypal.com|PayPal|high
+microsoft|microsoft.com|Microsoft|high
+office|office.com|Microsoft Office|low
+outlook|outlook.com|Outlook|high
+onedrive|onedrive.com|OneDrive|high
+apple|apple.com|Apple|high
+icloud|icloud.com|iCloud|high
+google|google.com|Google|high
+gmail|gmail.com|Gmail|high
+amazon|amazon.com|Amazon|high
+netflix|netflix.com|Netflix|high
+facebook|facebook.com|Facebook|high
+instagram|instagram.com|Instagram|high
+whatsapp|whatsapp.com|WhatsApp|high
+linkedin|linkedin.com|LinkedIn|high
+twitter|twitter.com|Twitter|high
+tiktok|tiktok.com|TikTok|high
+docusign|docusign.com|DocuSign|high
+dropbox|dropbox.com|Dropbox|high
+adobe|adobe.com|Adobe|high
+zoom|zoom.us|Zoom|low
+slack|slack.com|Slack|high
+spotify|spotify.com|Spotify|high
+github|github.com|GitHub|high
+gitlab|gitlab.com|GitLab|high
+coinbase|coinbase.com|Coinbase|high
+binance|binance.com|Binance|high
+metamask|metamask.io|MetaMask|high
+blockchain|blockchain.com|Blockchain.com|low
+chase|chase.com|Chase|low
+wellsfargo|wellsfargo.com|Wells Fargo|high
+bankofamerica|bankofamerica.com|Bank of America|high
+citibank|citibank.com|Citibank|high
+hsbc|hsbc.com|HSBC|high
+barclays|barclays.co.uk|Barclays|high
+natwest|natwest.com|NatWest|high
+lloydsbank|lloydsbank.com|Lloyds Bank|high
+santander|santander.co.uk|Santander|high
+revolut|revolut.com|Revolut|high
+monzo|monzo.com|Monzo|high
+royalmail|royalmail.com|Royal Mail|high
+usps|usps.com|USPS|high
+fedex|fedex.com|FedEx|high
+dhl|dhl.com|DHL|high
+ups|ups.com|UPS|low
+evri|evri.com|Evri|high
+dpd|dpd.com|DPD|low
+hmrc|gov.uk|HMRC|high
+irs|irs.gov|IRS|high
+steam|steampowered.com|Steam|low
+epicgames|epicgames.com|Epic Games|high
+roblox|roblox.com|Roblox|high
+discord|discord.com|Discord|high
+telegram|telegram.org|Telegram|high
+signal|signal.org|Signal|low
+protonmail|proton.me|Proton Mail|high
+yahoo|yahoo.com|Yahoo|high
+ebay|ebay.com|eBay|high
+etsy|etsy.com|Etsy|high
+walmart|walmart.com|Walmart|high
+target|target.com|Target|low
+bestbuy|bestbuy.com|Best Buy|high
+costco|costco.com|Costco|high
+ikea|ikea.com|IKEA|high
+airbnb|airbnb.com|Airbnb|high
+booking|booking.com|Booking.com|high
+expedia|expedia.com|Expedia|high
+uber|uber.com|Uber|high
+lyft|lyft.com|Lyft|high
+doordash|doordash.com|DoorDash|high
+deliveroo|deliveroo.co.uk|Deliveroo|high
+justeat|just-eat.co.uk|Just Eat|high
+argos|argos.co.uk|Argos|high
+tesco|tesco.com|Tesco|high
+asda|asda.com|Asda|high
+sainsburys|sainsburys.co.uk|Sainsbury's|high
+currys|currys.co.uk|Currys|high
+boots|boots.com|Boots|low
+vodafone|vodafone.com|Vodafone|high
+o2|o2.co.uk|O2|low
+ee|ee.co.uk|EE|low
+three|three.co.uk|Three|low
+sky|sky.com|Sky|low
+bt|bt.com|BT|low
+virginmedia|virginmedia.com|Virgin Media|high
+talktalk|talktalk.co.uk|TalkTalk|high

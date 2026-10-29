@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Norlay Link Checker</title>
+</head>
+<body>
+<h1>Norlay Link Checker</h1>
+<p>Norlay Link Checker sends the link you have copied to Google Gemini, which explains what the address appears to be. The add-on never opens the link.</p>
+
+<h2>First time setup</h2>
+<ol>
+<li>Get a free API key at https://aistudio.google.com/apikey.</li>
+<li>Open the NVDA menu, then Preferences, then Settings.</li>
+<li>Choose Norlay Link Checker in the list of categories.</li>
+<li>Paste the key and press OK. The key is encrypted before it is saved.</li>
+</ol>
+<p>You can press Test the key to send one request and confirm that it works. The result appears in a small dialog with a Close button. That request uses a little of your free quota.</p>
+
+<h2>How to use it</h2>
+<ol>
+<li>Copy a link from an email, a document, a chat or a web page.</li>
+<li>Press NVDA+Alt+L, or open the NVDA menu, then Tools, then Explain link in clipboard.</li>
+<li>The explanation appears in a read-only text field. Move through it with the arrow keys, select with Shift plus the arrow keys, and press Escape or the Close button to close the window.</li>
+<li>Press NVDA+Alt+Shift+L to hear the explanation without opening a window.</li>
+</ol>
+<p>You can change both shortcuts in NVDA's Input Gestures dialog, under Norlay Link Checker.</p>
+
+<h2>What the explanation contains</h2>
+<ul>
+<li>What the site or organisation appears to be.</li>
+<li>What the path and query suggest the link is for, such as a login page or a download.</li>
+<li>Anything that deserves caution, such as a lookalike name or an unexpected subdomain.</li>
+</ul>
+<p>Every answer ends with the sentence: This explains the address. It is not a safety check.</p>
+
+<h2>Choosing a model</h2>
+<p>The default is Gemini 3.5 Flash-Lite. It is free, fast, and uses very little of the free allowance. Gemini 3.8 Flash gives better answers but its free daily limit is much smaller, so it runs out quickly.</p>
+<p>To save quota, the add-on sends one short request per address, keeps the last 32 answers in memory, never resends history, and can leave out the query string if you turn that option off in settings.</p>
+
+<h2>What it cannot do</h2>
+<p>If the clipboard holds ordinary text or a file name, the add-on says that it is not a link and sends nothing. If it holds a file copied from File Explorer, it says so, and an image or another non-text format is reported the same way.</p>
+<p>Gemini only sees the text of the address. It has not opened the page, so it cannot know what the page contains, whether it is online, or where a shortened link goes. It can be wrong or overconfident.</p>
+<p>The explanation is not a virus scan and not a safety verdict. Be careful before you type a password or payment details anywhere.</p>
+
+<h2>Privacy</h2>
+<p>Nothing is sent until you press the shortcut, and the first time you are asked to confirm. The request goes only to generativelanguage.googleapis.com, the Google Gemini API. Norlay runs no server and never receives the address.</p>
+<p>Only the address and a few short facts already worked out on your computer are sent. The page itself is never fetched, opened or resolved. The address is not written to the NVDA log or to disk, and the last answers are kept in memory only.</p>
+<p>The add-on only reads the clipboard when you run the command, and it never writes to the clipboard. Windows clipboard history may still keep a copy of anything you copy; that is a Windows feature outside this add-on's control.</p>
+
+<h2>Requirements</h2>
+<p>NVDA 2026.1 or later on Windows 11, an internet connection when checking a link, and a free Gemini API key. Without a key or a connection the add-on cannot produce an explanation.</p>
+</body>
+</html>

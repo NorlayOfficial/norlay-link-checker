@@ -1,0 +1,17 @@
+# Sources are Python, Markdown, HTML and a data file: keep them as authored.
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.txt text eol=lf
+*.tpl text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.dat text eol=lf
+
+# Built files are binary and are never committed; this only protects against a
+# stray copy being added by accident.
+*.nvda-addon binary
+*.zip binary
+*.png binary
+*.ico binary

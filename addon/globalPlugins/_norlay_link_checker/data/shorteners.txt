@@ -1,0 +1,32 @@
+# Norlay Link Checker shortening-service list
+#
+# One registrable domain per line. A match is reported as a note only: the
+# add-on cannot reveal the real destination of a shortened link offline.
+
+bit.ly
+bitly.com
+tinyurl.com
+t.co
+goo.gl
+ow.ly
+is.gd
+buff.ly
+rebrand.ly
+cutt.ly
+shorturl.at
+tiny.cc
+rb.gy
+s.id
+lnkd.in
+t.ly
+v.gd
+tr.ee
+short.io
+bl.ink
+qrco.de
+dsc.gg
+clck.ru
+u.to
+shorte.st
+adf.ly
+bc.vc

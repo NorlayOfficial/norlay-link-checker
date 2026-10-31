@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security problem
+    url: https://github.com/NorlayOfficial/norlay-link-checker/security/advisories/new
+    about: Report a security problem privately. Never open a public issue for it.
+  - name: Install help
+    url: https://github.com/NorlayOfficial/norlay-link-checker/blob/main/INSTALL-WINDOWS.md
+    about: The Windows install guide, including what to do when double-clicking does nothing.
+  - name: Add-on Store listing
+    url: https://github.com/nvaccess/addon-datastore/issues/12585
+    about: The store submission itself. Questions about review status belong there.

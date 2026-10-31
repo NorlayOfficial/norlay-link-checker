@@ -1,0 +1,14 @@
+# Keep the workflow actions current. Nothing else in this repository has a
+# dependency: the add-on and its build script use only the Python standard
+# library, and the tests stub NVDA and wxPython.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "dependencies"

@@ -1,0 +1,35 @@
+name: Feature request
+description: Suggest something the add-on should do.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The add-on explains the address in the clipboard. It deliberately never
+        opens, fetches or resolves a link, and it never stores an address. Ideas
+        that keep that promise are much easier to accept.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the situation, not the implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you have in mind
+      description: Optional. How it would work with a keyboard and a screen reader.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you do instead today
+      description: Optional.
+    validations:
+      required: false

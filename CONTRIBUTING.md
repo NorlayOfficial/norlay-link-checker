@@ -10,6 +10,8 @@ it do more than that need a very good reason.
   be agreed before code is written.
 - Read `SECURITY.md` if your report is a security problem. Do not open a public
   issue for it.
+- Everyone taking part follows the
+  [Norlay Code of Conduct](https://github.com/NorlayOfficial/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## Build and test
 

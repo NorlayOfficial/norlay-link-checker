@@ -1,5 +1,10 @@
 # Norlay Link Checker
 
+[![CI](https://github.com/NorlayOfficial/norlay-link-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/NorlayOfficial/norlay-link-checker/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/NorlayOfficial/norlay-link-checker?label=release)](https://github.com/NorlayOfficial/norlay-link-checker/releases/latest)
+[![License: GPL-2.0](https://img.shields.io/badge/license-GPL--2.0-blue)](COPYING.txt)
+[![NVDA 2026.1+](https://img.shields.io/badge/NVDA-2026.1%2B-6b4fbb)](https://www.nvaccess.org/)
+
 A free NVDA add-on for Windows 11 that explains the link in your clipboard,
 without opening it. Copy a link, press `NVDA+Alt+L`, and the explanation
 appears in a read-only text window you can read, navigate and copy from.
@@ -186,7 +191,8 @@ tests/                    unit, packaging and privacy tests
 
 Bug reports and pull requests are welcome. See `CONTRIBUTING.md` for the build
 and test commands and the house style, and `SECURITY.md` for reporting a
-security issue privately.
+security issue privately. Everyone taking part is expected to follow the
+[Norlay Code of Conduct](https://github.com/NorlayOfficial/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## Licence
 

@@ -1,3 +1,15 @@
+# Norlay Link Checker 1.1.4
+
+The main shortcut no longer collides with a command built into NVDA.
+
+* The explanation now opens with **NVDA+Control+Shift+L**. NVDA 2026.3 binds
+  NVDA+Alt+L to "increase braille automatic scroll rate", so the add-on no
+  longer claims that key.
+* **NVDA+Alt+Shift+L** still speaks the explanation without opening a window.
+  That combination was already free, and it is unchanged.
+* Nothing else changed: the clipboard check, the privacy behaviour and the
+  settings are exactly as they were in 1.1.3.
+
 # Norlay Link Checker 1.1.3
 
 The clipboard check now tells files, images, ordinary text and links apart

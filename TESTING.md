@@ -1,7 +1,7 @@
 # Manual test checklist
 
 Run this on Windows 11 with NVDA 2026.1 and, if possible, 2026.3.
-The add-on is `dist/norlayLinkChecker-1.1.3.nvda-addon`.
+The add-on is `dist/norlayLinkChecker-1.1.4.nvda-addon`.
 
 Everything here needs a real Gemini key and a live connection, so it cannot be
 covered by the automated suite.
@@ -11,7 +11,7 @@ covered by the automated suite.
 - Open the `.nvda-addon` file, or use Add-on Store, Install from external
   source. NVDA should offer to install it.
 - Say yes, restart NVDA.
-- Add-on Store, Installed add-ons: version should be 1.1.3.
+- Add-on Store, Installed add-ons: version should be 1.1.4.
 - NVDA menu, Tools should contain **Explain link in clipboard**.
 - NVDA menu, Preferences, Settings should contain **Norlay Link Checker**.
 
@@ -27,15 +27,31 @@ covered by the automated suite.
 - Press OK, reopen Settings. The key field should still be filled, and the
   value must not be readable in `%APPDATA%\nvda\nvda.ini` (look for `dpapi:`).
 
-## 3. Consent
+## 3. Shortcut conflicts
 
-- With the key set, copy `https://example.com/account` and press `NVDA+Alt+L`.
+- Open NVDA menu, Preferences, Input Gestures, expand **Norlay Link Checker**.
+  Both commands should be listed, and neither should be marked as conflicting
+  with an NVDA command.
+- Turn on input help with `NVDA+1`, then press `NVDA+Control+Shift+L`. NVDA
+  should read the add-on's description: "Sends the link in the clipboard to
+  Gemini and shows the explanation in a read-only window". It must not say
+  "Scroll rate", which is NVDA's own NVDA+Alt+L on a braille display.
+- With a braille display connected, press `NVDA+Alt+L`. It should still change
+  the braille automatic scroll rate, proving the add-on no longer claims it.
+- Still in input help, press `NVDA+Alt+Shift+L`. It should read "Speaks
+  Gemini's explanation of the link in the clipboard". Turn input help off again
+  with `NVDA+1`.
+
+## 4. Consent
+
+- With the key set, copy `https://example.com/account` and press
+  `NVDA+Control+Shift+L`.
 - The first time, a dialog must name Google Gemini and
   generativelanguage.googleapis.com. Cancel: nothing should be sent and no
   window should appear.
 - Press again and choose Send. After that, no dialog should appear again.
 
-## 4. The window
+## 5. The window
 
 - The explanation should appear in a window with a focused text field.
 - NVDA should announce a read-only, multi-line edit.
@@ -50,14 +66,14 @@ covered by the automated suite.
 - Check that the window contains the address, the explanation, and the closing
   line "This explains the address. It is not a safety check."
 
-## 5. Speech only
+## 6. Speech only
 
 - Press `NVDA+Alt+Shift+L` on the same link.
 - The answer should be spoken, with no window.
 - Press it again immediately: the answer should come back at once, because the
   result was cached and no request was made.
 
-## 6. Failure paths
+## 7. Failure paths
 
 - Disconnect the network and press the shortcut. Expect "I could not reach
   Google. Check that you are online."
@@ -65,13 +81,13 @@ covered by the automated suite.
   model, not a crash.
 - If you have used the free allowance, expect a quota message with a wait time.
 
-## 7. Privacy
+## 8. Privacy
 
-- Copy `report.pdf`, then press `NVDA+Alt+L`. The window must say **This is not
-  a link**, and no request may be sent.
-- Copy a real file in File Explorer (Ctrl+C), then press `NVDA+Alt+L`. The
-  window must say the clipboard holds a file, not a link. It must **not** say
-  another app is using the clipboard.
+- Copy `report.pdf`, then press `NVDA+Control+Shift+L`. The window must say
+  **This is not a link**, and no request may be sent.
+- Copy a real file in File Explorer (Ctrl+C), then press
+  `NVDA+Control+Shift+L`. The window must say the clipboard holds a file, not
+  a link. It must **not** say another app is using the clipboard.
 - Copy a picture, for example with Snipping Tool. The add-on must say the
   clipboard holds something that is not text.
 - Copy `nothing to see here` and press `NVDA+Alt+Shift+L`. The same sentence
@@ -81,7 +97,7 @@ covered by the automated suite.
 - Confirm `%APPDATA%\nvda\addons\norlayLinkChecker` contains no created files
   such as a cache or history.
 
-## 8. Housekeeping
+## 9. Housekeeping
 
 - Reload the add-on (NVDA menu, Tools, Reload plugins). The settings category
   must appear exactly once, not twice.

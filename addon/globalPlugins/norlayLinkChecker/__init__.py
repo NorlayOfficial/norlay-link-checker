@@ -210,7 +210,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			"Sends the link in the clipboard to Gemini and shows the explanation "
 			"in a read-only window",
 		),
-		gesture="kb:NVDA+alt+l",
+		gesture="kb:NVDA+control+shift+l",
 	)
 	def script_explainLinkInClipboard(self, gesture):
 		self._checkClipboard(speakOnly=False)

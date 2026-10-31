@@ -24,7 +24,7 @@ double-clicking.
 Run this in PowerShell, using the real drive letter:
 
 ```powershell
-$file = "E:\norlayLinkChecker-1.1.3.nvda-addon"
+$file = "E:\norlayLinkChecker-1.1.4.nvda-addon"
 Get-Item -LiteralPath $file | Select-Object Length
 certutil -hashfile $file SHA256
 ```
@@ -32,8 +32,8 @@ certutil -hashfile $file SHA256
 Expected:
 
 ```
-Length: 135342
-SHA256: 71768199d44eeb9661209bba19c4bb1d264b9d61867be9232776f2bfbfa1d05f
+Length: 135453
+SHA256: 579b982b19e84e4b4a728549c54d1312b88494695bc8bf1d6a41bc0f9dc1e251
 ```
 
 If `certutil` prints the hash, Windows can read the bytes and NVDA will be able
@@ -47,8 +47,8 @@ This unpacks the archive straight into NVDA's add-ons folder. It never uses the
 Quit NVDA first (`NVDA+Q`), then run:
 
 ```powershell
-$src  = "E:\norlayLinkChecker-1.1.3.nvda-addon"
-$zip  = "$env:TEMP\norlayLinkChecker-1.1.3.zip"
+$src  = "E:\norlayLinkChecker-1.1.4.nvda-addon"
+$zip  = "$env:TEMP\norlayLinkChecker-1.1.4.zip"
 $dest = "$env:APPDATA\nvda\addons\norlayLinkChecker"
 
 Copy-Item -LiteralPath $src -Destination $zip -Force
@@ -59,7 +59,7 @@ Get-ChildItem $dest | Select-Object Name
 ```
 
 The last command must list `manifest.ini`, `doc` and `globalPlugins` directly.
-If it lists one folder called `norlayLinkChecker-1.1.3` instead, the archive was
+If it lists one folder called `norlayLinkChecker-1.1.4` instead, the archive was
 unpacked one level too deep; move its contents up one level.
 
 Then start NVDA.
@@ -81,7 +81,7 @@ This also bypasses the association.
 2. Open the NVDA menu, then **Tools**, then **Add-on Store**.
 3. Press **Install from external source** (Alt+X).
 4. In the File name box, **type** the full path instead of browsing to it:
-   `E:\norlayLinkChecker-1.1.3.nvda-addon`
+   `E:\norlayLinkChecker-1.1.4.nvda-addon`
 5. Press Enter, confirm the install, and restart NVDA.
 
 ## 4. Option 3: repair the association (optional)
@@ -109,16 +109,16 @@ Check whether antivirus removed or quarantined the file:
 Then confirm the file was not damaged in transfer:
 
 ```powershell
-Get-FileHash "$env:TEMP\norlayLinkChecker-1.1.3.zip" -Algorithm SHA256
+Get-FileHash "$env:TEMP\norlayLinkChecker-1.1.4.zip" -Algorithm SHA256
 ```
 
 The hash must still be
-`71768199D44EEB9661209BBA19C4BB1D264B9D61867BE9232776F2BFBFA1D05F`.
+`579B982B19E84E4B4A728549C54D1312B88494695BC8BF1D6A41BC0F9DC1E251`.
 
 ## Confirm it loaded
 
 Open NVDA menu, Tools, Add-on Store, Installed add-ons. **Norlay Link Checker**
-should be listed with version 1.1.3. NVDA menu, Tools should also contain
+should be listed with version 1.1.4. NVDA menu, Tools should also contain
 **Explain link in clipboard**.
 
 ## Removing it

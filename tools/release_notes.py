@@ -41,7 +41,7 @@ def section(version: str) -> str:
 
 def main() -> int:
 	parser = argparse.ArgumentParser(description=__doc__)
-	parser.add_argument("version", help="for example 1.1.3")
+	parser.add_argument("version", help="for example 1.1.4")
 	arguments = parser.parse_args()
 	print(section(arguments.version))
 	return 0

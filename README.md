@@ -6,8 +6,9 @@
 [![NVDA 2026.1+](https://img.shields.io/badge/NVDA-2026.1%2B-6b4fbb)](https://www.nvaccess.org/)
 
 A free NVDA add-on for Windows 11 that explains the link in your clipboard,
-without opening it. Copy a link, press `NVDA+Alt+L`, and the explanation
-appears in a read-only text window you can read, navigate and copy from.
+without opening it. Copy a link, press `NVDA+Control+Shift+L`, and the
+explanation appears in a read-only text window you can read, navigate and
+copy from.
 
 This is the public release. Download the latest version from
 [GitHub Releases](https://github.com/NorlayOfficial/norlay-link-checker/releases/latest)
@@ -59,9 +60,9 @@ add-on refuses to store it rather than keeping it in plain text.
 
 ## Use
 
-- Copy a link, then press `NVDA+Alt+L` to open the explanation in a read-only
-  window. Press Escape or the Close button to hide it; the same window is
-  reused next time.
+- Copy a link, then press `NVDA+Control+Shift+L` to open the explanation in a
+  read-only window. Press Escape or the Close button to hide it; the same
+  window is reused next time.
 - Press `NVDA+Alt+Shift+L` to hear the explanation without a window.
 - Or use NVDA menu, Tools, Explain link in clipboard.
 - Both shortcuts can be changed in NVDA's Input Gestures dialog, under

@@ -97,7 +97,7 @@ followed the file from the OneDrive desktop to a flash drive. It is a broken
 ```
 python3.13 build.py
 python3.13 -m unittest discover -s tests -t .
-unzip -l dist/norlayLinkChecker-1.1.3.nvda-addon
+unzip -l dist/norlayLinkChecker-1.1.4.nvda-addon
 ```
 
 To confirm the sources are valid for NVDA's Python rather than only for the

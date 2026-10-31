@@ -14,7 +14,7 @@ addon_info = {
 		"in a read-only window you can read and copy. The page itself is never "
 		"fetched, the address is never saved, and the link is never opened."
 	),
-	"addon_version": "1.1.3",
+	"addon_version": "1.1.4",
 	"addon_author": "Norlay",
 	"addon_url": "https://norlay.fit/norlay-link-checker/",
 	"addon_sourceURL": "https://github.com/NorlayOfficial/norlay-link-checker",
@@ -25,6 +25,7 @@ addon_info = {
 	"addon_license": "GPL v2",
 	"addon_licenseURL": "https://www.gnu.org/licenses/gpl-2.0.html",
 	"addon_changelog": (
+		"1.1.4: the main shortcut is now NVDA+Control+Shift+L, because NVDA 2026.3 uses NVDA+Alt+L to increase the braille automatic scroll rate. NVDA+Alt+Shift+L still speaks the answer without a window. "
 		"1.1.3: copied files and images are recognised as such instead of being "
 		"reported as a busy clipboard. Links, ordinary text, files and other "
 		"clipboard formats are told apart before anything is sent. 1.1.2: text "
